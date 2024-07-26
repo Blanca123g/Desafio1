@@ -1,0 +1,3 @@
+## LISTADO DE CAMBIOS
+## V1.0.0
+[feat]: Se crean las migraciones de libros y autores, con sus respectivos modelos y controladores. Se agregan las funciones la modelo de autores y se crea su respectivo seeder
