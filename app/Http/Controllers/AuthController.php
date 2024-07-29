@@ -31,7 +31,10 @@ class AuthController extends Controller
                 'message' => 'Usuario creado correctamente'
             ], 201);
         } catch (\Throwable $th) {
-            //throw $th;
+            return response()->json([
+                'mensaje' => 'Ocurrio un error al registrar el usuario, intente nuevamente',
+                'success' => false
+            ], 500);
         }
     }
 
@@ -46,7 +49,7 @@ class AuthController extends Controller
             if (!Auth::attempt($credentials)) {
                 return response()->json([
                     'mensaje' => 'Usuario y/o contraseña invalido(s)',
-                    'success'=>false
+                    'success' => false
                 ], 401);
             }
 
@@ -60,7 +63,7 @@ class AuthController extends Controller
             }
 
             return response()->json([
-                'mensaje'=>'Inicio de sesión exitoso',
+                'mensaje' => 'Inicio de sesión exitoso',
                 'access_token' => $tokenResult->accessToken,
                 'token_type' => 'Bearer',
                 'expires_at' => Carbon::parse($token->expires_at)->toDateTimeString(),
@@ -68,9 +71,31 @@ class AuthController extends Controller
             ], 200);
         } catch (\Throwable $th) {
             return response()->json([
-                'mensaje'=>'Ocurrio un error al iniciar sesión, intente nuevamente',
-                'success'=> false
-            ], $th->getCode());
+                'mensaje' => 'Ocurrio un error al iniciar sesión, intente nuevamente',
+                'success' => false
+            ], 500);
+        }
+    }
+
+    /**
+     * Cierre de sesión (anular el token)
+     */
+    public function logout(Request $request)
+    {
+        try {
+            
+            $request->user()->token()->revoke();
+
+            return response()->json([
+                'message' => 'Sesión cerrada correctamente',
+                'success'=>true
+            ]);
+
+        } catch (\Throwable $th) {
+            return response()->json([
+                'mensaje' => 'Ocurrio un error al cerrar la sesión, intente nuevamente',
+                'success' => false
+            ], 500);
         }
     }
 }

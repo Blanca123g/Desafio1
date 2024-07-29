@@ -1,4 +1,7 @@
 ## LISTADO DE CAMBIOS
+## V1.4.0
+[feat]: Se agrega funcion para cerrar sesión
+
 ## V1.3.0
 [feat]: Se crean las funciones CRUD para el modelo  de libros
 
