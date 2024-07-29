@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Author;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,8 +18,14 @@ class BookFactory extends Factory
      */
     public function definition(): array
     {
+        $fecha= new Carbon();
         return [
-            //
+            'title'=>fake()->text(30),
+            'isbn'=>fake()->isbn13(),
+            'published_date'=>fake()->date(),
+            'author_id'=>Author::all()->random()->id,
+            'created_at'=>$fecha->today(),
+            'updated_at'=>$fecha->today(),
         ];
     }
 }

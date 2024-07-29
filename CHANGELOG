@@ -1,3 +1,12 @@
 ## LISTADO DE CAMBIOS
+## V1.3.0
+[feat]: Se crean las funciones CRUD para el modelo  de libros
+
+## V1.2.0
+[feat]: Se crean las funciones CRUD para el modelo  de autores
+
+## V1.1.0
+[feat]: Se crean las funciones para registro y login de usuarios
+
 ## V1.0.0
 [feat]: Se crean las migraciones de libros y autores, con sus respectivos modelos y controladores. Se agregan las funciones la modelo de autores y se crea su respectivo seeder

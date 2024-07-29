@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use Carbon\Carbon;
+use Faker\Factory as FakerFactory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,10 +18,15 @@ class AuthorFactory extends Factory
      */
     public function definition(): array
     {
+        $fecha= new Carbon();
+        $faker = FakerFactory::create('es_ES');
+
         return [
-            'name'=>fake()->name(),
-            'birthdate'=>fake()->date(),
-            'nationality'=>fake()->country,
+            'name'=>$faker->name(),
+            'birthdate'=>$faker->date(),
+            'nationality'=>$faker->country,
+            'created_at'=>$fecha->today(),
+            'updated_at'=>$fecha->today(),
         ];
     }
 }

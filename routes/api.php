@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
@@ -15,9 +16,28 @@ use App\Http\Controllers\AuthorController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+Route::options('{all}', function () {
+    return response('ok', 200)
+        ->header('Access-Control-Allow-Credentials', 'true')
+        ->header('Access-Control-Allow-Methods', 'POST, GET, PATCH, DELETE, OPTIONS')
+        ->header('Access-Control-Allow-Headers', 'Content-Type, Accept, Authorization, X-Requested-With, X-Token')
+        ->header('Access-Control-Allow-Origin', '*');
+})->where('all', '.*');
+
+Route::group([
+    'prefix' => 'auth'
+], function () {
+    Route::post('login', [AuthController::class, 'login']);
+    Route::post('register', [AuthController::class, 'register']);
 });
 
-Route::apiResource('books', BookController::class);
-Route::apiResource('authors', AuthorController::class);
+Route::group([
+    'middleware' => 'auth:api'
+], function () {
+    Route::get('logout', [AuthController::class, 'logout']);
+    Route::apiResource('books', BookController::class);
+    Route::apiResource('authors', AuthorController::class);
+});

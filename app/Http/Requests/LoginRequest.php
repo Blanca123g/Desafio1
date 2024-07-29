@@ -7,7 +7,7 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\Response;
 use Illuminate\Contracts\Validation\Validator;
 
-class UpdateAuthorRequest extends FormRequest
+class LoginRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,9 +25,15 @@ class UpdateAuthorRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=>['required', 'string'],
-            'birthdate'=>['required', 'date'],
-            'nationality'=>['required', 'string'],
+            'email' => [
+                'required',
+                'email',
+            ],
+            'password' => [
+                'required',
+                'string'
+            ],
+            'remember_me' => 'boolean'
         ];
     }
 

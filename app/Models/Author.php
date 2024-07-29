@@ -38,7 +38,7 @@ class Author extends Model
      * @param string|null $p_buscar
      * @return void
      */
-    public function getAuthors(string|null $p_buscar)
+    public function getPaginateOrSearch(string|null $p_buscar)
     {
         $query = $this::select('*');
 
@@ -80,8 +80,8 @@ class Author extends Model
      * @param array $p_data
      * @return void
      */
-    public function eliminar(array $p_data)
+    public function eliminar()
     {
-        return $this->delete($p_data);
+        return $this->delete();
     }
 }
