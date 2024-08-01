@@ -38,3 +38,4 @@ Route::group([
     Route::apiResource('books', BookController::class);
     Route::apiResource('authors', AuthorController::class);
 });
+

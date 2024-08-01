@@ -1,4 +1,7 @@
 ## LISTADO DE CAMBIOS
+## V1.5.0
+[feat]: Se agregan pruebas unitarias para los modelos Author/Book, se agregan instrucciones al README
+
 ## V1.4.0
 [feat]: Se agrega funcion para cerrar sesión
 
