@@ -68,3 +68,7 @@ El archivo se encuentra en la carpeta tools/postman
 Para utilizarlo se debe importar el archivo DESAFIO1.postman_collection.json a POSTMAN
 
 
+### SQL DUMP
+El archivo se encuentra en la carpeta tools/database
+La base de datos utilizada para el proyecto fue: PostgreSQL
+
