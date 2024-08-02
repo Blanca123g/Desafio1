@@ -23,7 +23,7 @@ Se debe crear previamente la base de datos: **desafio_idesa**
 
 En el archivo .env se deben cambiar los siguientes valores de acuerdo al motor de base de datos a utilizar
 ```
-DB_CONNECTION=[pgsql || mysql || sqlite || sqlsrv]
+DB_CONNECTION=[pgsql || mysql]
 DB_HOST=127.0.0.1
 DB_PORT=[pgsql 5432 || mysql 3306]
 DB_DATABASE=desafio_idesa
@@ -61,4 +61,10 @@ php artisan serve
 ### Access web browser (temporal)
 
 To access [http://localhost:8000/]
+
+### POSTMAN COLLECTION
+
+El archivo se encuentra en la carpeta tools/postman
+Para utilizarlo se debe importar el archivo DESAFIO1.postman_collection.json a POSTMAN
+
 

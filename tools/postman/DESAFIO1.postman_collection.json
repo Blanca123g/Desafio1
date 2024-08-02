@@ -1,0 +1,614 @@
+{
+	"info": {
+		"_postman_id": "c3e92a96-454d-41dc-98a7-4f67cc8cfc2c",
+		"name": "DESAFIO1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37283812"
+	},
+	"item": [
+		{
+			"name": "Authors",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}authors?page=1",
+							"host": [
+								"{{URL}}authors"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get/{id}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}authors/8",
+							"host": [
+								"{{URL}}authors"
+							],
+							"path": [
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}authors/4",
+							"host": [
+								"{{URL}}authors"
+							],
+							"path": [
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}authors/8?name=Diego Olmedo&birthdate=1996-01-22&nationality=Paraguayan",
+							"host": [
+								"{{URL}}authors"
+							],
+							"path": [
+								"8"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Diego Olmedo"
+								},
+								{
+									"key": "birthdate",
+									"value": "1996-01-22"
+								},
+								{
+									"key": "nationality",
+									"value": "Paraguayan"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "name",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Ruth Caceres",
+									"type": "text"
+								},
+								{
+									"key": "birthdate",
+									"value": "1996-02-03",
+									"type": "text"
+								},
+								{
+									"key": "nationality",
+									"value": "Paraguayan",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}authors",
+							"host": [
+								"{{URL}}authors"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}books?page=3",
+							"host": [
+								"{{URL}}books"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get/{id}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}books/8",
+							"host": [
+								"{{URL}}books"
+							],
+							"path": [
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}books/4",
+							"host": [
+								"{{URL}}books"
+							],
+							"path": [
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Cien años de soledad",
+									"type": "text"
+								},
+								{
+									"key": "isbn",
+									"value": "4571242245456",
+									"type": "text"
+								},
+								{
+									"key": "published_date",
+									"value": "1987-05-30",
+									"type": "text"
+								},
+								{
+									"key": "author_id",
+									"value": "4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}books/8",
+							"host": [
+								"{{URL}}books"
+							],
+							"path": [
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Libro de prueba",
+									"type": "text"
+								},
+								{
+									"key": "isbn",
+									"value": "1234567891012",
+									"type": "text"
+								},
+								{
+									"key": "published_date",
+									"value": "2024-05-30",
+									"type": "text"
+								},
+								{
+									"key": "author_id",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}books",
+							"host": [
+								"{{URL}}books"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Usuario de prueba",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "correo1@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}auth/register",
+					"host": [
+						"{{URL}}auth"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let jsonData= JSON.parse(responseBody);",
+							"",
+							"pm.collectionVariables.set(\"token\", jsonData.access_token);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "correo1@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						},
+						{
+							"key": "remember_me",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}auth/login",
+					"host": [
+						"{{URL}}auth"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}logout?",
+					"host": [
+						"{{URL}}logout"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://127.0.0.1:8000/api/",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZTJlYmUxMTQyMDM5OTMxMDQ3YmFhYjMwZjc3Nzg1M2Q3ZTEzZWE0MTAxNWMyYWJmMDA5ODQzOWQ0ZjllN2IyOTg0MDZjMWEyOWY5OWI1N2YiLCJpYXQiOjE3MjIyMTUwOTMuMDkyNjk1LCJuYmYiOjE3MjIyMTUwOTMuMDkyNjk5LCJleHAiOjE3MzgxMTI2OTMuMDIyNDA3LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.XRPCUHPu3AALvV3xnSl7rs76-s96HHL3FwgETJ93KpBm83ySo53Xl2ZSMLgi1T0OAJS7mkDqms7M75YOzMZ6rmnRk93WscPsLv2iJFkSsyexpfk4iMDgV_6jJRpOL6xAoOtrzkJ6xlx80Zc_xfZbbf8F8U2YdE8fkviHEkFa2alWSsUMF3S2viZLoi7lfW9VZ4cQzmWpon-RkHiMqCZZ9CT7G8FBGR5d0dQ7JkHX1whzGVfW_ayijp8Nfvl6No2yakUdRkxRGE01PILNX3Pd6SN6NzNzUYqLaAa6xG52Za3SqmAhkk0ipR5saH-sU-Hh2Ssstz52L4tDvPa1BqXB9kg4s_fCZA2WqBEdEFP9LmXodiO5bf-b-NA96RJGpYiFEPuS03ozCidg4IngtGPhUef4uURwasKmczJtjnoQyYE_d5yRdqJNfeSzqmcX7L6f1G7No2S8lwHD5rutyqEBzgWrwVm-pAiKFoc0F9nqYRndYDY685iSakUBxk0NNrfMvwOqtzLPtBZWWC_s9uN1VGzqt2aA8gVtG-o_6lnonXfweCeTaB03ZG4QJfmCt_7jIpZdOLMOIlEeA9bODuquG0wFIEL1sj1Bc_7Gpp3G3a16zgs_I-z4hFi_8i3EvzYmY4mBmHhzVAQQe8B5f3GCKMP-D-9frO1GZR9yj0XZW90",
+			"type": "string"
+		}
+	]
+}
