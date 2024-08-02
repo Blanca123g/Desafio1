@@ -11,15 +11,24 @@
 
 ## Project
 ```bash
-sudo apt update
-sudo apt install git
-sudo apt autoclean && sudo apt clean
 cd /var/www/html/
 git clone https://github.com/Blanca123g/Desafio1.git
-sudo chown -R useradmin:www-data Desafio1
 cd Desafio1
 cp .env.example .env
 composer install
+```
+
+### Consideraciones importantes
+Se debe crear previamente la base de datos: **desafio_idesa**
+
+En el archivo .env se deben cambiar los siguientes valores de acuerdo al motor de base de datos a utilizar
+```
+DB_CONNECTION=[pgsql || mysql || sqlite || sqlsrv]
+DB_HOST=127.0.0.1
+DB_PORT=[pgsql 5432 || mysql 3306]
+DB_DATABASE=desafio_idesa
+DB_USERNAME=[usuario_de_la_BD]
+DB_PASSWORD=[contraseña]
 ```
 
 ### Migrations and Seeders

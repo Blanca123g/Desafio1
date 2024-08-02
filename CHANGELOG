@@ -1,4 +1,7 @@
 ## LISTADO DE CAMBIOS
+## V1.5.1
+[fix]: Se modifica contenido de README --configuracion de BD
+
 ## V1.5.0
 [feat]: Se agregan pruebas unitarias para los modelos Author/Book, se agregan instrucciones al README
 
